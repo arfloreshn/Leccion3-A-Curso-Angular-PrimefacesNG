@@ -1,0 +1,15 @@
+modelo\CanalVenta.class
+servicios\InicializarRestFull.class
+modelo\PeliculasCategorias.class
+modelo\Promociones.class
+modelo\Paises.class
+modelo\SalasPeliculas.class
+modelo\ActoresInterpretacion.class
+modelo\Peliculas.class
+servicios\CrossOriginResourceSharingFilter.class
+modelo\FormasPago.class
+modelo\Usuario.class
+modelo\Salas.class
+modelo\Funciones.class
+modelo\PreciosVta.class
+modelo\Actores.class
