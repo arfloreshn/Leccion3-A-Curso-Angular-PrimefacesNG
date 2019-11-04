@@ -25,7 +25,7 @@ import modelo.MedioProyeccion;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.medioproyeccion")
+@Path("servicio.medioproyeccion")
 public class MedioProyeccionFacadeREST extends funcionCRUD<MedioProyeccion> {
 
     @PersistenceContext(unitName = "DSCines")

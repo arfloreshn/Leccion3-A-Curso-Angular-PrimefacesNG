@@ -25,7 +25,7 @@ import modelo.Paises;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.paises")
+@Path("servicio.paises")
 public class PaisesFacadeREST extends funcionCRUD<Paises> {
 
     @PersistenceContext(unitName = "DSCines")
@@ -35,52 +35,52 @@ public class PaisesFacadeREST extends funcionCRUD<Paises> {
         super(Paises.class);
     }
 
+    //Crear un nuevo registro
     @POST
     @Override
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes(MediaType.APPLICATION_JSON)
     public void create(Paises entity) {
         super.create(entity);
     }
 
+    
+    //Modificar un registro
     @PUT
     @Path("{id}")
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Consumes(MediaType.APPLICATION_JSON)
     public void edit(@PathParam("id") Short id, Paises entity) {
+        entity.setPaisid(id);
         super.edit(entity);
     }
 
+    //Borrar un registro
     @DELETE
     @Path("{id}")
     public void remove(@PathParam("id") Short id) {
         super.remove(super.find(id));
     }
 
+    
+    //Listar un registro
     @GET
     @Path("{id}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public Paises find(@PathParam("id") Short id) {
         return super.find(id);
     }
 
     @GET
     @Override
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Paises> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Paises> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
-    }
-
-    @GET
-    @Path("count")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String countREST() {
-        return String.valueOf(super.count());
     }
 
     @Override

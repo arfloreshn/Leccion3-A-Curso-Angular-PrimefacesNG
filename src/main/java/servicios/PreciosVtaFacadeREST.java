@@ -25,7 +25,7 @@ import modelo.PreciosVta;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.preciosvta")
+@Path("servicio.preciosvta")
 public class PreciosVtaFacadeREST extends funcionCRUD<PreciosVta> {
 
     @PersistenceContext(unitName = "DSCines")

@@ -25,7 +25,7 @@ import modelo.Usuario;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.usuario")
+@Path("servicio.usuario")
 public class UsuarioFacadeREST extends funcionCRUD<Usuario> {
 
     @PersistenceContext(unitName = "DSCines")

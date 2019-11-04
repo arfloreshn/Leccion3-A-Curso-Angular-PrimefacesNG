@@ -25,7 +25,7 @@ import modelo.ActoresInterpretacion;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.actoresinterpretacion")
+@Path("servicio.actoresinterpretacion")
 public class ActoresInterpretacionFacadeREST extends funcionCRUD<ActoresInterpretacion> {
 
     @PersistenceContext(unitName = "DSCines")

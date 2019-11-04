@@ -24,8 +24,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -33,7 +31,6 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "salas")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Salas.findAll", query = "SELECT s FROM Salas s")
     , @NamedQuery(name = "Salas.findByIdsala", query = "SELECT s FROM Salas s WHERE s.idsala = :idsala")
@@ -132,7 +129,7 @@ public class Salas implements Serializable {
         this.snDisponible = snDisponible;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<Facturas> getFacturasList() {
         return facturasList;
     }
@@ -141,7 +138,7 @@ public class Salas implements Serializable {
         this.facturasList = facturasList;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<Pases> getPasesList() {
         return pasesList;
     }
@@ -166,8 +163,8 @@ public class Salas implements Serializable {
         this.idsucursal = idsucursal;
     }
 
-    @XmlTransient
-    public List<SalasPeliculas> getSalasPeliculasList() {
+    @JsonbTransient
+   public List<SalasPeliculas> getSalasPeliculasList() {
         return salasPeliculasList;
     }
 
@@ -175,7 +172,7 @@ public class Salas implements Serializable {
         this.salasPeliculasList = salasPeliculasList;
     }
 
-    @XmlTransient
+    @JsonbTransient
     public List<SalasProyector> getSalasProyectorList() {
         return salasProyectorList;
     }
@@ -184,7 +181,7 @@ public class Salas implements Serializable {
         this.salasProyectorList = salasProyectorList;
     }
 
-    @XmlTransient
+     @JsonbTransient
     public List<SalasInventario> getSalasInventarioList() {
         return salasInventarioList;
     }

@@ -25,7 +25,7 @@ import modelo.Proyectores;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.proyectores")
+@Path("servicio.proyectores")
 public class ProyectoresFacadeREST extends funcionCRUD<Proyectores> {
 
     @PersistenceContext(unitName = "DSCines")

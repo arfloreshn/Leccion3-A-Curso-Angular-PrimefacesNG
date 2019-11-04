@@ -25,7 +25,7 @@ import modelo.Facturas;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.facturas")
+@Path("servicio.facturas")
 public class FacturasFacadeREST extends funcionCRUD<Facturas> {
 
     @PersistenceContext(unitName = "DSCines")

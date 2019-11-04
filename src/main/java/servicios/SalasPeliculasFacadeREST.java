@@ -25,7 +25,7 @@ import modelo.SalasPeliculas;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.salaspeliculas")
+@Path("servicio.salaspeliculas")
 public class SalasPeliculasFacadeREST extends funcionCRUD<SalasPeliculas> {
 
     @PersistenceContext(unitName = "DSCines")

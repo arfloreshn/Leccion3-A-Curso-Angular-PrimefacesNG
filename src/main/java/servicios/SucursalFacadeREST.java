@@ -25,7 +25,7 @@ import modelo.Sucursal;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.sucursal")
+@Path("servicio.sucursal")
 public class SucursalFacadeREST extends funcionCRUD<Sucursal> {
 
     @PersistenceContext(unitName = "DSCines")

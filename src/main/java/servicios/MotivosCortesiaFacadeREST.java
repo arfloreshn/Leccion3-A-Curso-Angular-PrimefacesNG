@@ -25,7 +25,7 @@ import modelo.MotivosCortesia;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.motivoscortesia")
+@Path("servicio.motivoscortesia")
 public class MotivosCortesiaFacadeREST extends funcionCRUD<MotivosCortesia> {
 
     @PersistenceContext(unitName = "DSCines")

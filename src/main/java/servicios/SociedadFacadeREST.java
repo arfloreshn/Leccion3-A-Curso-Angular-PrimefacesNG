@@ -25,7 +25,7 @@ import modelo.Sociedad;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.sociedad")
+@Path("servicio.sociedad")
 public class SociedadFacadeREST extends funcionCRUD<Sociedad> {
 
     @PersistenceContext(unitName = "DSCines")

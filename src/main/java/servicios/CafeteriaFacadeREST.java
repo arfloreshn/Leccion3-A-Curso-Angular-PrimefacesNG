@@ -25,7 +25,7 @@ import modelo.Cafeteria;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.cafeteria")
+@Path("servicio.cafeteria")
 public class CafeteriaFacadeREST extends funcionCRUD<Cafeteria> {
 
     @PersistenceContext(unitName = "DSCines")

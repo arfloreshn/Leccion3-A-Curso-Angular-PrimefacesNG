@@ -25,7 +25,7 @@ import modelo.CanalVenta;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.canalventa")
+@Path("servicio.canalventa")
 public class CanalVentaFacadeREST extends funcionCRUD<CanalVenta> {
 
     @PersistenceContext(unitName = "DSCines")

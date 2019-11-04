@@ -25,7 +25,7 @@ import modelo.SalasInventario;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.salasinventario")
+@Path("servicio.salasinventario")
 public class SalasInventarioFacadeREST extends funcionCRUD<SalasInventario> {
 
     @PersistenceContext(unitName = "DSCines")

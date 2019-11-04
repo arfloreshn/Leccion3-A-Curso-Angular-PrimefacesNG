@@ -25,7 +25,7 @@ import modelo.Promociones;
  * @author AllanRamiro
  */
 @Stateless
-@Path("modelo.promociones")
+@Path("servicio.promociones")
 public class PromocionesFacadeREST extends funcionCRUD<Promociones> {
 
     @PersistenceContext(unitName = "DSCines")

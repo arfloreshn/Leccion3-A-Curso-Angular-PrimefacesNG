@@ -6,7 +6,9 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,8 +20,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -27,11 +27,8 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "paises")
-@XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Paises.findAll", query = "SELECT p FROM Paises p")
-    , @NamedQuery(name = "Paises.findByPaisid", query = "SELECT p FROM Paises p WHERE p.paisid = :paisid")
-    , @NamedQuery(name = "Paises.findByNomPais", query = "SELECT p FROM Paises p WHERE p.nomPais = :nomPais")})
+    @NamedQuery(name = "Paises.findAll", query = "SELECT p FROM Paises p")})
 public class Paises implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,11 +37,27 @@ public class Paises implements Serializable {
     @Basic(optional = false)
     @Column(name = "paisid")
     private Short paisid;
+    
     @Size(max = 50)
     @Column(name = "nom_pais")
     private String nomPais;
+    
+    @Column(name = "idcontinente")
+    private int idContinente;
+    
+    
+    @Column(name="fec_creacion")
+    private Date fecIndependencia;
+    
+
+    @Size(max = 1)
+    @Column(name="sn_monarquia")
+    private String sn_monarquia;
+
+    
     @OneToMany(mappedBy = "idpais")
     private List<Sociedad> sociedadList;
+    
     @OneToMany(mappedBy = "idpais")
     private List<Sucursal> sucursalList;
 
@@ -71,7 +84,32 @@ public class Paises implements Serializable {
         this.nomPais = nomPais;
     }
 
-    @XmlTransient
+    public int getIdContinente() {
+        return idContinente;
+    }
+
+    public void setIdContinente(int idContinente) {
+        this.idContinente = idContinente;
+    }
+
+    public Date getFecIndependencia() {
+        return fecIndependencia;
+    }
+
+    public void setFecIndependencia(Date fecIndependencia) {
+        this.fecIndependencia = fecIndependencia;
+    }
+
+    public String getSn_monarquia() {
+        return sn_monarquia;
+    }
+
+    public void setSn_monarquia(String sn_monarquia) {
+        this.sn_monarquia = sn_monarquia;
+    }
+
+    
+    @JsonbTransient
     public List<Sociedad> getSociedadList() {
         return sociedadList;
     }
@@ -79,8 +117,8 @@ public class Paises implements Serializable {
     public void setSociedadList(List<Sociedad> sociedadList) {
         this.sociedadList = sociedadList;
     }
-
-    @XmlTransient
+    
+    @JsonbTransient
     public List<Sucursal> getSucursalList() {
         return sucursalList;
     }
@@ -89,6 +127,8 @@ public class Paises implements Serializable {
         this.sucursalList = sucursalList;
     }
 
+
+    
     @Override
     public int hashCode() {
         int hash = 0;
