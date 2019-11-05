@@ -1,8 +1,9 @@
-# My Java EE / Microprofile app
-This is my awesome app.
+# Creando servicios middlerware Java EE 8 de la leccion 3-A
 
-Use the script *build-and-run.sh*  to build the app and run it with Payara Micro in a Docker-container. You may have to make it executable first.
+# Requisitos del back-end middleware
 
-	chmod +x build-and-run.sh
-	./build-and-run.sh
+- Netbeans 8.2 como minimo
+- Jdk 1.8 u(221).
+- PostGreSQL11.
+- GlassFish 5.1 (Eclipse) pero puede usar Payara 5.
 
